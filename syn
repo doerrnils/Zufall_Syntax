@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weiterleitung …</title>
+  <noscript>Diese Seite leitet per JavaScript weiter. Bitte JavaScript aktivieren.</noscript>
+  <script>
+    (function () {
+      // 👉 Hier deine 4 Ziel-Links eintragen (können extern oder interne Pages sein)
+      const targets = [
+        "https://nils-experiment.limesurvey.net/852862?lang=de ",
+        "https://nils-experiment.limesurvey.net/277929?lang=de ",
+        "https://nils-experiment.limesurvey.net/727561?lang=de ",
+        "https://nils-experiment.limesurvey.net/839113?lang=de "
+      ];
+
+      // Optional: Query- und Hash-Parameter an das Ziel durchreichen?
+      const passQueryAndHash = true;
+
+      function pickRandom(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+      }
+
+      let url = new URL(pickRandom(targets));
+
+      if (passQueryAndHash) {
+        const current = new URL(window.location.href);
+        // Query anhängen (ohne vorhandene Keys im Ziel zu überschreiben)
+        current.searchParams.forEach((v, k) => {
+          if (!url.searchParams.has(k)) url.searchParams.set(k, v);
+        });
+        // Hash durchreichen, falls gesetzt und Ziel keinen eigenen hat
+        if (!url.hash && current.hash) url.hash = current.hash;
+      }
+
+      // replace() verhindert, dass die Zwischenseite im Verlauf landet
+      window.location.replace(url.toString());
+    })();
+  </script>
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 2rem; }
+  </style>
+</head>
+<body>
+  <p>Leite weiter …</p>
+</body>
+</html>
