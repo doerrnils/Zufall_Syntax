@@ -12,10 +12,10 @@
     (function () {
       // 👉 Hier deine 4 Ziel-Links eintragen (können extern oder interne Pages sein)
       const targets = [
-        "https://nils-experiment.limesurvey.net/852862?lang=de ",
-        "https://nils-experiment.limesurvey.net/277929?lang=de ",
-        "https://nils-experiment.limesurvey.net/727561?lang=de ",
-        "https://nils-experiment.limesurvey.net/839113?lang=de "
+        "https://nils-experiment.limesurvey.net/852862?lang=de",
+        "https://nils-experiment.limesurvey.net/277929?lang=de",
+        "https://nils-experiment.limesurvey.net/727561?lang=de",
+        "https://nils-experiment.limesurvey.net/839113?lang=de"
       ];
 
       // Optional: Query- und Hash-Parameter an das Ziel durchreichen?
